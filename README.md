@@ -39,11 +39,8 @@ This document serves the Round 2 revision of this paper.
 	From the main folder, run
 	```
 	cd qsub-type-I-error-and-power
-
-	```
-	The "cd" into each individual subfolder and
-	```
 	sh submit_all.sh
+	cd ..
 	```
 	After all jobs finish, "cd" to the main folder and run
 	```
@@ -55,16 +52,63 @@ This document serves the Round 2 revision of this paper.
 4. To reproduce Simulation 2 results:
 	From the main folder, run
 	```
-
+	
 	```
 
 5. To reproduce Simulation 3 results:
+	From the main folder, run
+	```
+	cd qsub-FDR
+	sh submit_all.sh
+	cd ..
+	```
+	After all jobs finish, "cd" to the main folder and run
+	```
+	matlab -r "newprint_FDR_query"
+	```
 
 
 6. To reproduce Simulation 4 results:
+	From the main folder, run
+	```
+	cd qsub-multiple-pooling
+	sh submit_all.sh
+	cd ..
+	cd qsub-unmatched-multiple-pooling
+	sh submit_all.sh
+	cd ..
+	```
+	After all jobs finish, "cd" to the main folder and run
+	```
+	matlab -r "newprint_multiple_pooling"
+	matlab -r "newprint_unmatched_multiple_pooling"
+	```
 
 7. To reproduce Simulation 5 results:
-
+	From the main folder, run
+	```
+	cd qsub-degenerate
+	cd 1-degenerate-vs-degenerate
+	sh submit_all.sh
+	sh benchmark_resample/submit_all.sh
+	sh benchmark_subsample/submit_all.sh
+	cd ..
+	cd 2-degenerate-vs-nondegenerate
+	sh submit_all.sh
+	sh benchmark_resample/submit_all.sh
+	sh benchmark_subsample/submit_all.sh
+	cd ..
+	cd 3-degenerate-vs-nondegenerate_part_2
+	sh submit_all.sh
+	sh benchmark_resample/submit_all.sh
+	sh benchmark_subsample/submit_all.sh
+	cd ..
+	cd ..
+	```
+	After all jobs finish, "cd" to the main folder and run
+	```
+	matlab -r "newprint_degeneracy"
+	```
 
 
 
