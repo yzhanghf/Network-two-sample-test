@@ -11,6 +11,60 @@ This document serves the Round 2 revision of this paper.
 
 ## Steps to reproduce simulation results
 
+0. [Preparation] Upload all contents of this repository to a unity folder, under the path:
+	```
+	/home/Magpie/Network-two-sample-test/
+	```
+	where recall that "Magpie" is the anonymized name.
+	Please notice that the Unity server that you use to reproduce this code may have a different folder structure -- in which case, please also revise the Slurm scripts under the "slurm" subfolder accordingly.
+	We also assume that "~" refers to the folder "/home/Magpie/".
+
+1. [Preparation] Replace "Magpie" by your (reviewer's) own username.
+
+	First, edit "folderlist.txt", replace "Magpie" there by your own username.
+	Then in Unity commandline, run
+	```
+	sh changename.sh Magpie YOUR-OWN-USERNAME
+	```
+
+	For the remaining steps, whenever we need to describe folder paths, we will still use "Magpie" as the anonymized username.
+
+2. [Preparation] Run the following commands to prepare folders to hold intermediate results, logs and plots
+	```
+	mkdir result new-result new-result-2-multiple-pooling new-result-degenerate-CI-coverage new-result-FDR new-result-test-power new-result-unmatched-multiple-pooling
+	mkdir pbs_logs plots
+	```
+
+3. To reproduce Simulation 1 results: 
+	From the main folder, run
+	```
+	cd qsub-type-I-error-and-power
+
+	```
+	The "cd" into each individual subfolder and
+	```
+	sh submit_all.sh
+	```
+	After all jobs finish, "cd" to the main folder and run
+	```
+	module load matlab
+	matlab -r "newprint_coverage_heatmap"
+	matlab -r "newprint_test_power"
+	```
+
+4. To reproduce Simulation 2 results:
+	From the main folder, run
+	```
+
+	```
+
+5. To reproduce Simulation 3 results:
+
+
+6. To reproduce Simulation 4 results:
+
+7. To reproduce Simulation 5 results:
+
 
 
 
