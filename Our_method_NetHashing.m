@@ -8,6 +8,8 @@ function [NetStatList] = Our_method_NetHashing(A, MotifNameList, FileName)
 		MotifName = MotifNameList{MotifIndex};
 		
 		switch MotifName
+			% case 'Edge'
+				% r = 2;  s = 2;
 			case 'Triangle'
 				r = 3;  s = 3;
 			case 'Vshape'
@@ -17,6 +19,7 @@ function [NetStatList] = Our_method_NetHashing(A, MotifNameList, FileName)
 		end
 		
 		m = size(A,1);
+		%%%%%%%
         % first calculate all statistics needed from A
         rho_ahat = sum(A(:))/(m*(m-1));
         u_mhat = Motif(A, 0, MotifName);
@@ -48,10 +51,13 @@ function [NetStatList] = Our_method_NetHashing(A, MotifNameList, FileName)
             -4*r*(r-1)*s*rho_ahat^(-(2*s+1))*u_mhat.*(g_rhoa_h'*ones(1,m).*g_a2hat)...
             -4*r*s*rho_ahat^(-(2*s+1))*u_mhat.*(g_ahat'*ones(1,m).*g_rhoa2_h);
 		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         e_a4a1 = mean(mean(a4.*(a1'*ones(1,m))'));
         e_a1a3 = mean(a1.*a3);
         e_a3 = sum(a1.^3)/m;
         e_a1a1a2 = mean(mean(a2.*(a1'*ones(1,m)).*(a1'*ones(1,m))'));
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		
 		StructVar = struct();
 		

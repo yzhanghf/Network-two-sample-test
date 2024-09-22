@@ -52,7 +52,15 @@ This document serves the Round 2 revision of this paper.
 4. To reproduce Simulation 2 results:
 	From the main folder, run
 	```
-	
+	cd qsub-ROC
+	sh submit_all.sh
+	cd ..
+	```
+	After all jobs finish, "cd" to the main folder and run
+	```
+	module load matlab
+	matlab -r "ROC_curver_plot_new"
+	matlab -r "ROC_comparison_hist"
 	```
 
 5. To reproduce Simulation 3 results:
@@ -114,8 +122,8 @@ This document serves the Round 2 revision of this paper.
 
 ## Steps to reproduce data example results
 
-1. Example 1: Run 'data-examples/example1.m'</li>
-2. Example 2: Run 'data/examples/example2.m'</li>
+1. Example 1: Run 'data-examples/example1.m'
+2. Example 2: Run 'data/examples/example2.m'
 
 
 

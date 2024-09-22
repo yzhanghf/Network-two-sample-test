@@ -1,14 +1,8 @@
 
 function output = Motif(A, xi1, MotifName)
-	% Input: 
-	% A: adjacency matrix
-	% xi1: 0 compute U-hat; 1: compute G_1-hat; 2: compute G_2-hat
-	% MotifName: 'Edge', 'Triangle', 'Vshape'
-	% output:
-	% corresponding xi1 results
 	
 	if(~exist('xi1','var'))
-		xi1 = 0; 
+		xi1 = 0; % 0: compute U-hat; 1: compute G_1-hat; 2: compute G_2-hat
 	end
 	n = size(A,1);
 	
@@ -91,13 +85,13 @@ function output = Motif(A, xi1, MotifName)
 			case 0
 				vv = sum(A,1);
 				x  = mean(vv.*(vv-1).*(vv-2)/6);
-                output = x;
+				output = x;
 			case 1
 				vv = sum(A,1);
 				y  = ( vv.*(vv-1).*(vv-2)/6 + ((vv-1).*(vv-2)/2)*A ) / ((n-1)*(n-2)*(n-3)/6);
 				x  = mean(y);
 				y  = y - x;
-                output = y;
+				output = y;
 			case 2
 				vv = sum(A,1);
 				VS = ones(n,1) * ((vv-1).*(vv-2)/2);
@@ -112,7 +106,7 @@ function output = Motif(A, xi1, MotifName)
 				z  = z - yy - yy' - x;
 				z  = z - diag(diag(z));
 				output = z;
-	    end
+		end
 	end % end switch
 	
 	

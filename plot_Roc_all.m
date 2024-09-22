@@ -2,9 +2,9 @@ nall = [100,200,400,800,1600];
 MarkerSize = 12;  LineWidth = 2;
 exampleall = ["BlockModel1"];
 for example = exampleall
-    time_hash = zeros(total_MC,length(nall));
-    elapsedTime = zeros(total_MC,length(nall));
-    auc_r = zeros(total_MC,length(nall));
+    % time_hash = zeros(total_MC,length(nall));
+    % elapsedTime = zeros(total_MC,length(nall));
+    % auc_r = zeros(total_MC,length(nall));
    
     fig = figure('visible','on');
     box on

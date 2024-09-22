@@ -2,15 +2,15 @@
 #SBATCH --partition=stat
 #SBATCH --time=12:00:00
 #SBATCH --nodes=1 --ntasks-per-node=5 --mem=10gb
-#SBATCH --output=/home/zhang.7824/Meijia-two-sample-test-Revision-1/pbs_logs/Meijia-nonparGT-1-sm4-sm4-sep005-log.txt
+#SBATCH --output=/home/Magpie/Network-two-sample-test/pbs_logs/Meijia-nonparGT-1-sm4-sm4-sep005-log.txt
 #SBATCH --job-name=RevMeijiaSimu1-nonparGT-sm4-sm4-sep005
-#SBATCH --mail-user=ronaldaylmerfisher@gmail.com
 
-#SBATCH --mail-type=ALL
+
+
 
 module load gnu
 module load R
 module load matlab
 
-cd ~/Meijia-two-sample-test-Revision-1/
+cd ~/Network-two-sample-test/
 matlab -r "shift_amount=0.05;GraphonName1 =  'SmoothGraphon4';  GraphonName2 =  'SmoothGraphon4';  sparsity_parameters_a = 1.0;  sparsity_parameters_b = 1.0;new_type1_benchmark_nonparGT_test_power_simulation"
