@@ -98,18 +98,12 @@ This document serves the Round 2 revision of this paper.
 	cd qsub-degenerate
 	cd 1-degenerate-vs-degenerate
 	sh submit_all.sh
-	sh benchmark_resample/submit_all.sh
-	sh benchmark_subsample/submit_all.sh
 	cd ..
 	cd 2-degenerate-vs-nondegenerate
 	sh submit_all.sh
-	sh benchmark_resample/submit_all.sh
-	sh benchmark_subsample/submit_all.sh
 	cd ..
 	cd 3-degenerate-vs-nondegenerate_part_2
 	sh submit_all.sh
-	sh benchmark_resample/submit_all.sh
-	sh benchmark_subsample/submit_all.sh
 	cd ..
 	cd ..
 	```
