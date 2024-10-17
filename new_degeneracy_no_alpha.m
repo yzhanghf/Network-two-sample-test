@@ -10,7 +10,7 @@ MotifNameall = ["Triangle","Vshape"];
 
 
 
-iterc = 500;
+iterc = 300;
 % cdelta = 0.01;
 
 % alpha = 1.25;
@@ -44,7 +44,7 @@ for MotifName = MotifNameall
 			else
 				s = 2;
 			end				
-			rng(1);
+			rng(2024);
 			mu_m = graphon_mean(GraphonName1, MotifName);
 			mu_n = graphon_mean(GraphonName2, MotifName);
 % 			true_D = sparsity_parameters_a ^(-s)*sparsity_parameters_a ^s *mu_m - ...
@@ -81,46 +81,8 @@ for MotifName = MotifNameall
 				s_mn = sqrt(zzz(3));
 				t_mc(i,1) = (D_mn-true_D)/s_mn;
 
-
-				% % first calculate all statistics needed from A
-				% rho_ahat = sum(A(:))/(m*(m-1));
-				% u_mhat = Motif(A, 0, MotifName);
-				% g_ahat = Motif(A, 1, MotifName);
-				% g_rhoa_h = Motif(A, 1, 'Edge');
-				% a1 = r*rho_ahat ^(-s).*g_ahat -2*s*rho_ahat ^(-s-1)*u_mhat.*g_rhoa_h;
-
-				% % var_source_2A = 
-				
-				% % calculating statistics needed from B
-				% rho_bhat = sum(B(:))/(n*(n-1));
-				% v_nhat = Motif(B, 0, MotifName);
-				% g_bhat = Motif(B, 1, MotifName);
-				% g_rhob_h = Motif(B, 1, 'Edge');
-				% b1 = r*rho_bhat ^(-s).*g_bhat -2*s*rho_bhat ^(-s-1)*v_nhat.*g_rhob_h;
-				
-				
-				% calculating t ststistics and t hat
-				% var_source_1 = 1/m^2*sum(a1.^2)+1/n^2*sum(b1.^2);
-				% var_source_2 = ;
-				% var_source_3 = u_mhat/m + v_nhat/n;
-				
-				% D_mn = rho_ahat ^(-s)*u_mhat - rho_bhat ^(-s)*v_nhat;
-				% t_mc(i,1) = (D_mn - true_D)/sqrt(var_overall);
-				
-
-
-
 				% calculating confidence interval 
 				sig_level = 0.1;
-				% q_l = norminv(1-alpha/2) + I0 +q1+q2*(norminv(1-alpha/2)^2-1 );
-				% q_u = norminv(alpha/2) + I0 +q1+q2*(norminv(alpha/2)^2-1);
-				% d_l = D_mn - s_mn*(q_l-smooth);
-				% d_u = D_mn - s_mn*(q_u-smooth);
-				% if true_D < d_u && true_D > d_l
-				% 	coverage(i,1) = 1;
-				% else
-				% 	coverage(i,1) = 0;
-				% end
 				q_l = norminv(1-sig_level/2);
 				q_u = norminv(sig_level/2);
 				d_l = D_mn - s_mn*(q_l-smooth);
