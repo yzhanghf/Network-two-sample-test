@@ -1,10 +1,10 @@
-# Reproducing the results in JASA-TM-2024-0092
+# Reproducing the results in JASA-TM-2024-0092-R2
 
-This document serves the Round 2 revision of this paper.
+This document serves the Round 3 revision of this paper.
 
 
 ## Hardware requirement:  computing cluster, such as Unity
-* Simulations in this code are likely infeasible to run on personal computers.  Therefore, all reproducibility details are written for running on high-performance computing (HPC) clusters, such as Unity.  In this document, we will use Unity with Slurm queueing system.
+* It is likely infeasible to run some simulations on personal computers.  Therefore, all reproducibility details are written for running on high-performance computing (HPC) clusters, such as Unity.  In this document, we will use Unity with Slurm queueing system.
 * In this work, we use the word "Magpie" as the anonymized username.
 
 
@@ -19,7 +19,7 @@ This document serves the Round 2 revision of this paper.
 	Please notice that the Unity server that you use to reproduce this code may have a different folder structure -- in which case, please also revise the Slurm scripts under the "slurm" subfolder accordingly.
 	We also assume that "~" refers to the folder "/home/Magpie/".
 
-1. [Preparation] Replace "Magpie" by your (reviewer's) own username.
+1. [Preparation] Replace "Magpie" by your own username.
 
 	First, edit "folderlist.txt", replace "Magpie" there by your own username.
 	Then in Unity commandline, run
@@ -31,93 +31,90 @@ This document serves the Round 2 revision of this paper.
 
 2. [Preparation] Run the following commands to prepare folders to hold intermediate results, logs and plots
 	```
-	mkdir result new-result new-result-2-multiple-pooling new-result-degenerate-CI-coverage new-result-FDR new-result-test-power new-result-unmatched-multiple-pooling
-	mkdir pbs_logs plots
+	mkdir results pbs_logs plots
 	```
 
 3. To reproduce Simulation 1 results: 
 	From the main folder, run
 	```
-	cd qsub-type-I-error-and-power
+	cd qsub/simulation-1
 	sh submit_all.sh
 	cd ..
+	cd ..
 	```
-	After all jobs finish, "cd" to the main folder and run
+	After all jobs finish, from the main folder, run
 	```
 	module load matlab
-	matlab -r "newprint_coverage_heatmap"
-	matlab -r "newprint_test_power"
+	matlab -r "print_simulation_1_results"
 	```
 
 4. To reproduce Simulation 2 results:
 	From the main folder, run
 	```
-	cd qsub-ROC
+	cd qsub/simulation-2
 	sh submit_all.sh
 	cd ..
+	cd ..
 	```
-	After all jobs finish, "cd" to the main folder and run
+	After all jobs finish, from the main folder, run
 	```
 	module load matlab
-	matlab -r "ROC_curver_plot_new"
-	matlab -r "ROC_comparison_hist"
+	matlab -r "print_simulation_2_results"
 	```
 
 5. To reproduce Simulation 3 results:
 	From the main folder, run
 	```
-	cd qsub-FDR
+	cd qsub/simulation-3
 	sh submit_all.sh
 	cd ..
+	cd ..
 	```
-	After all jobs finish, "cd" to the main folder and run
+	After all jobs finish, from the main folder, run
 	```
-	matlab -r "newprint_FDR_query"
+	module load matlab
+	matlab -r "print_simulation_3_results"
 	```
-
 
 6. To reproduce Simulation 4 results:
 	From the main folder, run
 	```
-	cd qsub-multiple-pooling
+	cd qsub/simulation-4
 	sh submit_all.sh
 	cd ..
-	cd qsub-unmatched-multiple-pooling
-	sh submit_all.sh
 	cd ..
 	```
-	After all jobs finish, "cd" to the main folder and run
+	After all jobs finish, from the main folder, run
 	```
-	matlab -r "newprint_multiple_pooling"
-	matlab -r "newprint_unmatched_multiple_pooling"
+	module load matlab
+	matlab -r "print_simulation_4_results"
 	```
 
 7. To reproduce Simulation 5 results:
 	From the main folder, run
 	```
-	cd qsub-degenerate
+	cd qsub/simulation-5
 	cd 1-degenerate-vs-degenerate
 	sh submit_all.sh
 	cd ..
 	cd 2-degenerate-vs-nondegenerate
 	sh submit_all.sh
 	cd ..
-	cd 3-degenerate-vs-nondegenerate_part_2
-	sh submit_all.sh
 	cd ..
 	cd ..
 	```
-	After all jobs finish, "cd" to the main folder and run
+	After all jobs finish, from the main folder, run
 	```
-	matlab -r "newprint_degeneracy"
+	module load matlab
+	matlab -r "print_simulation_5_results"
 	```
 
 
 
 ## Steps to reproduce data example results
 
-1. Example 1: Run 'data-examples/example1.m'
-2. Example 2: Run 'data/examples/example2.m'
+1. Example 1: cd to 'data-examples' subfolder and run 'example1.m' in MATLAB
+2. Example 2: cd to 'data-examples' subfolder and run 'example2.m' in MATLAB
 
 
 

@@ -1,6 +1,6 @@
-clear
-% Loading two adjacency matrices (Symmetric and their diagonal values are 0)
+addpath('../subroutines')
 
+% Loading two adjacency matrices (Symmetric and their diagonal values are 0)
 A1 = load("./data/A_1");
 A2 = load("./data/A_2");
 A1 = A1.A;

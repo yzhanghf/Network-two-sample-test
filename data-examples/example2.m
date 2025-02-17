@@ -1,5 +1,6 @@
+addpath('../subroutines')
+
 % Hashing step: to store a list of needed estimator of each network
-clear
 MotifNameList   = {'Triangle','Vshape','ThreeStar'};
 Files = dir("./data");
 isdir = [Files.isdir];
