@@ -1,5 +1,11 @@
 function [NetStatList] = Our_method_NetHashing(A, MotifNameList, FileName)
-	
+	% Higher-order accurate two-sample test for network comparison
+	% This is the hashing stage of our method, notice that it is run on **each single** network
+	% Input:
+	% 	A: adjacency matrix
+	% 	MotifNameList: list of motifs, whose corresponding summary statistics will be computed
+	% 	FileName: output file name
+	% Output: application-oriented users need **not** care about the meanings of the output list.  The output is a series of summary statistics that would be used by the fast version of our test method.
 	
 	NetStatList = {};
 	

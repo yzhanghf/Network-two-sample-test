@@ -1,2 +1,13 @@
-data-examples
 subroutines
+qsub/simulation-1
+qsub/simulation-1/benchmark_netcomp
+qsub/simulation-1/benchmark_nonparGT
+qsub/simulation-1/benchmark_subsample
+qsub/simulation-1/benchmark_netlsd
+qsub/simulation-1/benchmark_resample
+qsub/simulation-2
+qsub/simulation-3
+qsub/simulation-4
+qsub/simulation-5/1-degenerate-vs-degenerate
+qsub/simulation-5/2-degenerate-vs-nondegenerate
+data

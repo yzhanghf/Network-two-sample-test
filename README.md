@@ -7,6 +7,12 @@ This document serves the Round 3 revision of this paper.
 * It is likely infeasible to run some simulations on personal computers.  Therefore, all reproducibility details are written for running on high-performance computing (HPC) clusters, such as Unity.  In this document, we will use Unity with Slurm queueing system.
 * In this work, we use the word "Magpie" as the anonymized username.
 
+## Matlab files that encode our method
+
+* Users who want to apply our method, please copy the entire "subroutine" subfolder, as the main method files still depend on a few further subroutines.
+* ```subroutines/Our_method_classic.m```: Input two adjacency matrices and perform our proposed test.
+* ```subroutines/Our_method_NetHashing.m``` and ```subroutines/Our_method_FastTest.m```: These code our hashing and fast test method.  Run the hashing to compress each individual network into a sequence of summary statistics.  Then run the second to perform our method based on these summary statistics, without needing to access the original adjacency matrices.
+
 
 
 ## Steps to reproduce simulation results
@@ -113,9 +119,42 @@ This document serves the Round 3 revision of this paper.
 
 ## Steps to reproduce data example results
 
-1. Example 1: cd to 'data-examples' subfolder and run 'example1.m' in MATLAB
-2. Example 2: cd to 'data-examples' subfolder and run 'example2.m' in MATLAB
+1. Example 1:
+	1. Preparation: download data from http://snap.stanford.edu/data/ego-Gplus.html (official website for this publically available data set) and unzip, place individual data files unzipped from "gplus.tar.gz" under subfolder "data/gplus", place "gplus_combined.txt" under subfolder "data".
+	2. To reproduce our method's result: cd to "data" subfolder.  Submit the slurm job:
+	```
+	cd slurm
+	sbatch gplus_our_method.sh
+	cd ..
+	```
+	to output the plot.
+	3. To reproduce the result of subsampling, submit the slurm job:
+	```
+	cd slurm
+	sbatch gplus_subsample.sh
+	cd ..
+	```
+	to output the plot.
 
 
+
+2. Example 2: 
+	1. It's recommended to request the data from the data owner, as specified in the ACC form accompanying this paper.  Alternatively, you may download the data file "Final_data.mat" from this repository and place it in the "data" subfolder.  However, please notice that this file is a "facsimile": artificial noise was added for privacy protection.  Consequently, the artificial noise may lead to some difference in reproduced results.
+	2. To reproduce our method's result: cd to 'data' subfolder and submit the slurm job:
+	```
+	cd slurm
+	sbatch sz_our_method.sh
+	cd ..
+	```
+	3. To reproduce the results in benchmark methods, submit the following slurm jobs:
+
+	```
+	cd slurm
+	sbatch sz_subsample.sh
+	sbatch sz_nonparGT.sh
+	sbatch sz_netcomp.sh
+	cd ..
+	```
+	4. After all methods finish, run "example_2_plot_all_methods.m" in MATLAB to output the plots.
 
 

@@ -1,13 +1,34 @@
 function [zzz] = Our_method_classic(A, B, MotifName, alpha)
+	% Higher-order accurate two-sample test for network comparison
+	% Input list: 
+	% 	A, B: network adjacency matrices
+	% 	MotifName = "Triangle" or "Vshape" or "ThreeStar"
+	%	alpha: tuning parameter, between 1 and 2
+	% Output list:
+	% 	the output "zzz" is a vector of 5 elements:
+	%	zzz(1), zzz(2): lower and upper bounds of the CI for $d_{m,n}$ (discrepancy of rescaled population motif counts)
+	%	zzz(3): p-value for testing $H_0: d_{m,n}=0$
+	%	zzz(4): t test statistic
+	%	zzz(5): estimated variance
 	
 	zzz = [];
 
+	if(~exist('MotifName', 'var'))
+		MoftifName = "Triangle";
+	end
+
+	if(~exist('alpha', 'var'))
+		alpha = 1.5;
+	end
+
 	m = size(A,1);  n = size(B,1);
 	switch(MotifName)
-	case 'Triangle'
-		r=3;s=3;
-	case 'Vshape'
-		r=3;s=2;
+		case 'Triangle'
+			r=3;s=3;
+		case 'Vshape'
+			r=3;s=2;
+		case 'ThreeStar'
+			r=4;s=3;
 	end
 
 	smooth=0;
@@ -116,8 +137,8 @@ function [zzz] = Our_method_classic(A, B, MotifName, alpha)
 	zzz(3) = 2*min([ p_value_1, p_value_2 ]);
 	zzz(4) = t_mn;
 	zzz(5) = s_mn;
-	zzz(6) = 1/m^2*sum(a1.^2);
-	zzz(7) = 1/n^2*sum(b1.^2);
+	% zzz(6) = 1/m^2*sum(a1.^2);
+	% zzz(7) = 1/n^2*sum(b1.^2);
 
 	
 end
