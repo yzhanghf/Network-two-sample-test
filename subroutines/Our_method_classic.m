@@ -3,7 +3,7 @@ function [zzz] = Our_method_classic(A, B, MotifName, alpha)
 	% Input list: 
 	% 	A, B: network adjacency matrices
 	% 	MotifName = "Triangle" or "Vshape" or "ThreeStar"
-	%	alpha: tuning parameter, between 1 and 2
+	%	alpha: significance level, 1-alpha is the confidence level
 	% Output list:
 	% 	the output "zzz" is a vector of 5 elements:
 	%	zzz(1), zzz(2): lower and upper bounds of the CI for $d_{m,n}$ (discrepancy of rescaled population motif counts)
