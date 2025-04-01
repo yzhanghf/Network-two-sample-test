@@ -14,6 +14,7 @@ for m = mall
 	for n = nall
 		fprintf('%d, ', n);
 		for MotifName = MotifNameall
+			% generate data
 			if MotifName == "Triangle"
 				s = 3;
 			else

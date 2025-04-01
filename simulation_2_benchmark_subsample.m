@@ -25,6 +25,7 @@ for rndind = 1:total_query
     tic;
     for i = 1:total_database
         for t = 1:size(MotifNameall,2)
+            % generate data
             MotifName = MotifNameall{t};
             switch MotifName
                 case 'Vshape'
