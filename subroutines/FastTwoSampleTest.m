@@ -1,5 +1,7 @@
 function [p_value, conf_int] = FastTwoSampleTest(NetStatList1, NetStatList2, sig_level, cdelta)
-	% This file functions similarly to "Our_method_FastTest.m", but does not write/read files
+	% NetStatList1, NetStatList2: list of summary statistics, consistent with the output of "NetworkHashing.m"
+	% sig_level: significance level
+	% cdelta: artificial smoothing term, set to a small positive number or 0
 	
 	StdNormal = makedist('normal', 'mu', 0, 'sigma', 1);
 	

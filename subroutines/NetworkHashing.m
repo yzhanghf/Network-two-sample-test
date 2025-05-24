@@ -1,5 +1,7 @@
 function [NetStatList] = NetworkHashing(A, MotifNameList)
-	% This file functions similarly to "Our_method_NetHashing.m", but does not write/read files
+	%%% Notice that the hashing algorithm operates on each single network, not network pairs
+	% A: adjacency matrix
+	% MotifNameList: list of motif types to be hashed
 	
 	
 	NetStatList = {};
