@@ -1,5 +1,8 @@
 
 function [t_stat, p_value, test_stat_output_1, test_stat_output_2] = method_benchmark_resample(A,B,MotifName,N_boot)
+	% A, B: two adjacency matrices
+	% MotifName: motif type
+	% N_boot: number of bootstrap iterations, typically denoted by "B"
 	
 	m = size(A,1);
 	n = size(B,1);

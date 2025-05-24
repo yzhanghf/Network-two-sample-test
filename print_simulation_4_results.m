@@ -1,3 +1,4 @@
+
 % Print results for matched nodes pooling
 
 clear
@@ -10,6 +11,7 @@ coverage2 = zeros(length(N),length(MotifNameall));
 GraphonName1 =  'SmoothGraphon2';
 GraphonName2 =  'SmoothGraphon2';
 
+% Print results
 
 coveragemean = zeros(length(N),length(N));
 coverage2mean = zeros(length(N),length(N));

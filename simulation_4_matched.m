@@ -1,5 +1,7 @@
 addpath('subroutines')
 
+% Preamble: set network sizes and motif types.
+
 Na_all = [1,2,5,10,20,40];
 Nb_all = [1,2,5,10,20,40];
 

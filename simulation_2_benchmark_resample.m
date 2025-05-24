@@ -1,5 +1,6 @@
 addpath('subroutines')
 
+% Preamble: set network sizes, motif types and folder for temporary I/O files.
 rng(1)
 example = "SmoothGraphon1";
 Files = dir(strcat("./results/data_simulation_",string(n)));
@@ -95,6 +96,7 @@ for rndind = 1:total_query
     auc_r(rndind,1) = AUC;
 end
     
+% output
 rec(:,1) = minmaxp;
 rec(:,2) = Truthind;
 writematrix(rec,strcat("./results/minpv_truth_nores_",example,string(n),".csv"));

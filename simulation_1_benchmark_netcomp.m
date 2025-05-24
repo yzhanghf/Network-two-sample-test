@@ -1,9 +1,10 @@
 addpath('subroutines')
 
+% Preamble: set network sizes and motif types.
+
 mall = [20,40,80,160, 320,640];
 nall = [20,40,80,160, 320,640];
 MotifNameall = ["Triangle","Vshape"];
-
 
 iterc = 25;
 cdelta = 0.01;
@@ -13,6 +14,7 @@ for m = mall
 	for n = nall
 		fprintf('%d, ', n);
 		for MotifName = MotifNameall
+
 			% generate data
 			if MotifName == "Triangle"
 				s = 3;

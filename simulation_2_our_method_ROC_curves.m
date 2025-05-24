@@ -1,5 +1,6 @@
 addpath('subroutines')
 
+% Preamble: set network sizes, motif types and folder for temporary I/O files.
 rng(1)
 MotifName   = {'Triangle','Vshape'};
 GraphonName =  ["SmoothGraphon1","SmoothGraphon2","SmoothGraphon3",...

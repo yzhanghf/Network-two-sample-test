@@ -1,4 +1,5 @@
 function [p_value, conf_int] = FastTwoSampleTest(NetStatList1, NetStatList2, sig_level, cdelta)
+	% This file functions similarly to "Our_method_FastTest.m", but does not write/read files
 	
 	StdNormal = makedist('normal', 'mu', 0, 'sigma', 1);
 	

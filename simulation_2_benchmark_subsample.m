@@ -1,5 +1,6 @@
 addpath('subroutines')
 
+% Preamble: set network sizes, motif types and folder for temporary I/O files.
 rng(1)
 example = "SmoothGraphon1";
 Files = dir(strcat("./results/data_simulation_",string(n)));

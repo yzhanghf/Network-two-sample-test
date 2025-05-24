@@ -1,3 +1,6 @@
+
+% Configuration: motif types and graphon models
+
 mall = [80,160,320,640];
 nall = [80,160,320,640];
 MotifNameall = ["Triangle","Vshape"];
@@ -15,6 +18,8 @@ GraphonNameArray = {{'NewDegenGraphon1', 'NewDegenGraphon1'},...
 					{'NewDegenGraphon2', 'NewSmoothGraphon4'}};
 sparse_power_all = [0.125,0.25,0.33,0.50];
 
+
+% Print results
 
 for sparse_power = sparse_power_all
 	A_sparse_power = sparse_power;

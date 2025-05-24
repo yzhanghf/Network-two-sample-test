@@ -1,4 +1,7 @@
 function [output] = ReducedMomentIndeterDegen(A,B, alpha_A,alpha_B, MotifName)
+	% A, B: two adjacency matrices
+	% alpha_A, alpha_B: the powers for U-statistic reduction as defined in paper
+	% MotifName: motif type
 
 	m = size(A,1);
 	n = size(B,1);

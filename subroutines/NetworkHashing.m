@@ -1,4 +1,5 @@
 function [NetStatList] = NetworkHashing(A, MotifNameList)
+	% This file functions similarly to "Our_method_NetHashing.m", but does not write/read files
 	
 	
 	NetStatList = {};

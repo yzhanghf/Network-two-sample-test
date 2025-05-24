@@ -1,5 +1,7 @@
 addpath('subroutines')
 
+% Preamble: set network sizes and motif types.
+
 mall = [20,40,80,160, 320,640];
 nall = [20,40,80,160, 320,640];
 MotifNameall = ["Triangle","Vshape"];
@@ -13,6 +15,7 @@ for m = mall
 	for n = nall
 		fprintf('%d, ', n);
 		for MotifName = MotifNameall
+
 			% generate data
 			if MotifName == "Triangle"
 				s = 3;
@@ -74,6 +77,7 @@ for m = mall
 
 			end
 
+			% output
 			writematrix(coverage,strcat("./results/cover_netlsd_",...
 				MotifName,"_",GraphonName1,"_",GraphonName2,"_",...
 				"100shift_",sprintf('%03d',100*shift_amount),...

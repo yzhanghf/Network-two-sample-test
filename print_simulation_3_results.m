@@ -1,13 +1,11 @@
 
-% mall = [20,40,80];
-% nall = [20,40,80];
+% Configuration: set network sizes, motif types and number of networks.  Also set FDR targets.
+
 mnall = [40,80,160,320];
-% mnall = [80];
 null_prop_all = 0.1:0.1:0.9;
 N_networks = 300;
 MotifNameall = ["Triangle","Vshape"];
 LegendOn = [true, false];
-% calA_set_quantile = 0.1;
 sig_level = 0.1;
 
 graphon_shift_list = [0,0.01,0.02,0.03,0.04,0.05];
@@ -26,6 +24,7 @@ GraphonNameArray = {{'NewBlockModel1', 'NewBlockModel2'},...
 
 for LegendIndicator = LegendOn
 
+% Iterate over all motif types and graphon models tested by our experiments and print FDR results.
 
 for MotifName = MotifNameall
 	for GraphonNameIndex = 1:length(GraphonNameArray)

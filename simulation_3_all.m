@@ -1,5 +1,7 @@
 addpath('subroutines')
 
+% Preamble: set network sizes and motif types.
+
 mnall = [40,80,160,320];
 null_prop_all = 0.1:0.1:0.9;
 N_networks = 300;

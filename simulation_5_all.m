@@ -1,5 +1,7 @@
 addpath('subroutines')
 
+% Preamble: set network sizes and motif types.
+
 rng(1)
 mall = [80,160,320,640];
 nall = [80,160,320,640];
@@ -34,6 +36,8 @@ for MotifName = MotifNameall
 				s = 2;
 			end				
 			rng(2024);
+
+			% generate data
 			mu_m = graphon_mean(GraphonName1, MotifName);
 			mu_n = graphon_mean(GraphonName2, MotifName);
             true_D = mu_m - mu_n;

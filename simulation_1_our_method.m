@@ -1,5 +1,7 @@
 addpath('subroutines')
 
+% Preamble: set network sizes and motif types.
+
 mall = [20,40,80,160, 320,640];
 nall = [20,40,80,160, 320,640];
 MotifNameall = ["Triangle","Vshape"];
@@ -150,6 +152,7 @@ for m = mall
 
 			end
 
+			% output
 			writematrix(coverage,strcat("./results/MC_t_cover_edge_",string(m),"_",string(n),"_",MotifName,"_",GraphonName1,"_",GraphonName2,"_mn.csv"))
 			writematrix(coverage2,strcat("./results/MC_t_cover_norm_",string(m),"_",string(n),"_",MotifName,"_",GraphonName1,"_",GraphonName2,"_mn.csv"))
 			writematrix(t_mc,strcat("./results/MC_t_",string(m),"_",string(n),"_",MotifName,"_",GraphonName1,"_",GraphonName2,"_mn.csv"))

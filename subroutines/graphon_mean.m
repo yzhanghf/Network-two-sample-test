@@ -2,9 +2,6 @@
 function mk = graphon_mean(GraphonName, MotifName)
     switch GraphonName
         
-
-
-
         case 'NewSmoothGraphon2'
             switch MotifName
             case 'Triangle'
