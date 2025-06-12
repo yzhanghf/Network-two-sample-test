@@ -1,7 +1,22 @@
-# Reproducing the results in JASA-TM-2024-0092-R2
+# Network two-sample test
 
-This document serves the Round 3 revision of this paper.
+Reproducing the results in "Higher-order accurate two-sample network inference and network hashing"
 
+# Reference
+
+* Higher-order accurate two-sample network inference and network hashing, arxiv: https://arxiv.org/abs/2208.07573
+* BibTeX:
+```bibtex
+@article{shao2022higher,
+  title={Higher-order accurate two-sample network inference and network hashing},
+  author={Shao, Meijia and Xia, Dong and Zhang, Yuan and Wu, Qiong and Chen, Shuo},
+  journal={Journal of the American Statistical Association},
+  number={just-accepted},
+  pages={1--27},
+  year={2025+},
+  publisher={Taylor \& Francis}
+}
+```
 
 ## Hardware requirement:  computing cluster, such as Unity
 * It is likely infeasible to run some simulations on personal computers.  Therefore, all reproducibility details are written for running on high-performance computing (HPC) clusters, such as Unity.  In this document, we will use Unity with Slurm queueing system.
